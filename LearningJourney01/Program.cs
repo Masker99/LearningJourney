@@ -188,3 +188,46 @@ double area = Math.PI * radius * radius;
 Console.WriteLine(area);
 
 Console.WriteLine("==========");
+
+// 元组
+
+/*
+ * 属于结构类型
+ * 元组不可变
+ * 可以使用with来创建一个新元组，原始元组的修改副本
+ */
+var pt = (X: 1, Y: 2);
+var pt2 = pt with { Y = 10 };
+Console.WriteLine($"The point 'pt2' is at {pt2}.");
+
+var subscript = (A: 0, B: 0);
+subscript = pt;
+Console.WriteLine(subscript);
+
+var namedData = (Name: "Morning observation", Temp: 17, Wind: 4);
+var person = (FirstName: "", LastName: "");
+var order = (Product: "guitar picks", style: "triangle", quantity: 500, UnitPrice: 0.10m);
+
+// 类型
+Point pt3 = new Point(1, 1);
+var pt4 = pt3 with { Y = 10 };
+double slopeResult = pt4.Slope();
+Console.WriteLine($"The slope of {pt4} is {slopeResult}");
+Console.WriteLine($"The two points are {pt3} and {pt4}");
+
+public record Point(int X, int Y)
+{
+ public double Slope() => (double)Y / (double)X;
+}
+
+/*
+ * => 通常用来表达只有一行返回值的方法
+ */
+
+// 结构、类、接口类型
+
+/*
+ * class 是应用类型， struct 是一个值类型
+ * 值类型的变量在内存中内联存储实例的内容
+ * 引用类型的变量存储指向实例存储空间的引用或指针
+ */
