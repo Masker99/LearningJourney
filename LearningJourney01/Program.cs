@@ -209,6 +209,8 @@ var person = (FirstName: "", LastName: "");
 var order = (Product: "guitar picks", style: "triangle", quantity: 500, UnitPrice: 0.10m);
 
 // 类型
+
+/*
 Point pt3 = new Point(1, 1);
 var pt4 = pt3 with { Y = 10 };
 double slopeResult = pt4.Slope();
@@ -219,6 +221,7 @@ public record Point(int X, int Y)
 {
  public double Slope() => (double)Y / (double)X;
 }
+*/
 
 /*
  * => 通常用来表达只有一行返回值的方法
@@ -231,3 +234,84 @@ public record Point(int X, int Y)
  * 值类型的变量在内存中内联存储实例的内容
  * 引用类型的变量存储指向实例存储空间的引用或指针
  */
+
+Console.WriteLine("==========");
+
+// 分支
+ExploreIf();
+
+void ExploreIf()
+{
+ int a = 5;
+ int b = 3;
+ if (a + b > 10)
+ {
+  Console.WriteLine("The answer is greater than 10");
+ }
+ else
+ {
+  Console.WriteLine("The answer is not greater than 10");
+ }
+
+ int c = 4;
+ if ((a + b + c > 10) && (a > b))
+ {
+  Console.WriteLine("The answer is greater than 10");
+  Console.WriteLine("And the first number is greater than the second");
+ }
+ else
+ {
+  Console.WriteLine("The answer is not greater than 10");
+  Console.WriteLine("Or the first number is not greater than the second");
+ }
+
+ if ((a + b + c > 10) || (a > b))
+ {
+  Console.WriteLine("The answer is greater than 10");
+  Console.WriteLine("Or the first number is greater than the second");
+ }
+ else
+ {
+  Console.WriteLine("The answer is not greater than 10");
+  Console.WriteLine("And the first number is not greater than the second");
+ }
+}
+
+// 循环
+int counter = 0;
+while (counter < 10)
+{
+ Console.WriteLine($"Hello World! The counter is {counter}");
+ counter++;
+}
+
+counter = 0;
+do
+{
+ Console.WriteLine($"Hello World! The counter is {counter}");
+ counter++;
+} while (counter < 10);
+
+for (counter = 0; counter < 10; counter++)
+{
+ Console.WriteLine($"Hello World! The counter is {counter}");
+}
+
+// 嵌套循环
+for (int row = 1; row < 11; row++)
+{
+ for (char column = 'a'; column < 'k'; column++)
+ {
+  Console.WriteLine($"The cell is ({row}, {column})");
+ }
+}
+
+int sum = 0;
+for (int number = 1; number < 21; number++)
+{
+ if (number % 3 == 0)
+ {
+  sum = sum + number;
+ }
+}
+Console.WriteLine($"The sum is {sum}");
