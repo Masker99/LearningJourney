@@ -78,3 +78,113 @@ Console.WriteLine(songLyrics.Contains("greetings"));
 
 Console.WriteLine(songLyrics.StartsWith("You"));
 Console.WriteLine(songLyrics.EndsWith("hello"));
+
+Console.WriteLine("==========");
+
+// C#中的数字
+
+int a = 18;
+int b = 6;
+int c = a + b;
+Console.WriteLine(c);
+
+// subtraction
+c = a - b;
+Console.WriteLine(c);
+
+// multiplication
+c = a * b;
+Console.WriteLine(c);
+
+// division
+c = a / b;
+Console.WriteLine(c);
+
+
+/*
+ * 方法
+*/
+
+// WorkWithIntegers();
+
+void WorkWithIntegers()
+
+{ 
+ int a = 18;
+ int b = 6;
+ int c = a + b;
+ Console.WriteLine(c);
+
+
+ // subtraction
+ c = a - b;
+ Console.WriteLine(c);
+
+ // multiplication
+ c = a * b;
+ Console.WriteLine(c);
+
+ // division
+ c = a / b;
+ Console.WriteLine(c);
+}
+
+/*
+ * 数学运算的优先级一样
+ * 高阶运算先于低阶运算
+*/
+
+a = 5;
+b = 4;
+c = 2;
+int d = a + b * c;
+Console.WriteLine(d);
+
+d = (a + b) * c;
+Console.WriteLine(d);
+
+d = (a + b) - 6 * c + (12 * 4) / 3 + 12;
+Console.WriteLine(d);
+
+int e = 7;
+int f = 4;
+int g = 3;
+int h = (e + f) / g;
+Console.WriteLine(h);
+
+/*
+ * C# 的整数类型 有最小和最大限制
+ */
+
+int max = int.MaxValue;
+int min = int.MinValue;
+Console.WriteLine($"The range of integers is {min} to {max}");
+
+/*
+ * 当计算结果超出这些限制的值，结果将从一个限制覆盖到另一个限制范围
+ */
+int what = max + 3;
+Console.WriteLine($"An example of overflow: {what}");
+
+/*
+ * 浮点数
+ * 表示可能非常大或较小的非整型数
+ * 现代计算机上，通常使用双精度而不是单精度数字
+ * double，float
+ */
+double third = 1.0 / 3.0;
+Console.WriteLine(third);
+
+/*
+ * decimal
+ * 范围较小，但精度大于double
+ */
+decimal minDecimal = decimal.MinValue;
+decimal maxDecimal = decimal.MaxValue;
+Console.WriteLine($"The range of the decimal type is {minDecimal} to {maxDecimal}");
+
+double radius = 2.50;
+double area = Math.PI * radius * radius;
+Console.WriteLine(area);
+
+Console.WriteLine("==========");
